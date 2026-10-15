@@ -199,11 +199,19 @@ public enum EnumMachineAlpha implements IEnumMachine {
                 if (!RailcraftConfig.anchorFuelPassive.isEmpty()) return addAnchorInfo(stack);
                 break;
             default:
-                String tipTag = getTag() + ".tip";
+                String tipTag = getTooltipTag();
                 if (LocalizationPlugin.hasTag(tipTag)) tip = ToolTip.buildToolTip(tipTag);
                 break;
         }
         return tip;
+    }
+
+    private String getTooltipTag() {
+        if (!Game.isGTNH && this == COKE_OVEN) {
+            String classic = "tile.railcraft.machine.alpha.coke.oven.classic.tip";
+            if (LocalizationPlugin.hasTag(classic)) return classic;
+        }
+        return getTag() + ".tip";
     }
 
     private ToolTip addAnchorInfo(ItemStack stack) {

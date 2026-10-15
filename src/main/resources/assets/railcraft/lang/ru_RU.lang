@@ -761,6 +761,7 @@ tile.railcraft.machine.alpha.blast.furnace.classic.name=Доменный кир�
 tile.railcraft.machine.alpha.blast.furnace.tip=Мульти-блок: 3x4x3 (Полый)
 tile.railcraft.machine.alpha.coke.oven.name=Кирпич коксовой печи
 tile.railcraft.machine.alpha.coke.oven.tip=Мульти-блок: 3x3x3 (Полый)
+tile.railcraft.machine.alpha.coke.oven.classic.tip=Мульти-блок: 3x3x3 (Полый)
 tile.railcraft.machine.alpha.feed.station.name=Станция кормления
 tile.railcraft.machine.alpha.rock.crusher.name=Дробитель
 tile.railcraft.machine.alpha.rock.crusher.tip=Мульти-блок: 3x2x2

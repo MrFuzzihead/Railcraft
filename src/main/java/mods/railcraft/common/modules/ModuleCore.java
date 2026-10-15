@@ -124,7 +124,7 @@ public class ModuleCore extends RailcraftModule {
                                                                                                           // Pyrotheum
 
         Fluid creosote = Fluids.CREOSOTE.get();
-        if (creosote != null) FuelManager.addBoilerFuel(creosote, 6400); // Creosote
+        if (creosote != null) FuelManager.addBoilerFuel(creosote, Game.isGTNH ? 6400 : 4800); // Creosote
     }
 
     @Override
@@ -334,6 +334,17 @@ public class ModuleCore extends RailcraftModule {
                     woodRailbed,
                     't',
                     new ItemStack(Blocks.redstone_torch));
+
+            if (!Game.isGTNH) CraftingPlugin.addShapelessRecipe(
+                    RailcraftItem.rail.getStack(1, EnumRail.STANDARD),
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail,
+                    Blocks.rail);
         }
 
         MachineTileRegistery.registerTileEntities();

@@ -463,10 +463,17 @@ that keeps every upstream lang change a clean fast-forward.
 - [x] `CartFilterRecipe` — the `hasContainerItem` rejection is now gated to `Game.isGTNH`; non-GTNH buckets/containers
       can filter Tank and Cargo carts again, while GTNH keeps its dupe guard.
 
+### Pass 4 — GTNH balance gates (DONE, commit-ready)
+
+- [x] `SteamBoiler.getHeatLevel` — `heat / MAX_HEAT_LOW` only for GTNH; `heat / getMaxHeat()` restored elsewhere (the
+      `Math.min(..., 1)` fuel term becomes a no-op outside GTNH).
+- [x] `ModuleCore` — 8 vanilla rails → 1 standard rail shapeless recipe restored for `!Game.isGTNH`.
+- [x] `ModuleCore.addLiquidFuels` — creosote boiler fuel value `Game.isGTNH ? 6400 : 4800`.
+- [x] Coke Oven tooltip — `EnumMachineAlpha.getTooltipTag()` prefers `<coke.oven>.classic.tip` outside GTNH and falls
+      back to the normal tip; `.classic.tip` keys added to every locale that has the tip.
+
 ### Remaining passes
 
-- [ ] **Pass 4 — GTNH balance gates**: `SteamBoiler.getHeatLevel` (`2.7`); 8 rails → standard rail (`2.6`); creosote
-      value (`2.8`); Coke Oven deprecation tooltip (`2.9`, `.classic` tip key).
 - [ ] **Pass 5 — GTNH content/QoL**: gate `ModuleAdvancedTanks` on GT (`2.12`); silk-touch drop fix (`2.11`); optional
       Blast Furnace auto-fuel restore (`2.4`).
 - [ ] Optional config override for GTNH mode.

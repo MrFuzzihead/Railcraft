@@ -14,13 +14,17 @@ import mods.railcraft.common.blocks.machine.alpha.EnumMachineAlpha;
 import mods.railcraft.common.blocks.machine.beta.EnumMachineBeta;
 import mods.railcraft.common.blocks.machine.gamma.EnumMachineGamma;
 import mods.railcraft.common.carts.EnumCart;
+import mods.railcraft.common.compat.legacy.LegacyBlastFurnaceRecipes;
 import mods.railcraft.common.items.ItemMagnifyingGlass;
 import mods.railcraft.common.items.ItemNotepad;
+import mods.railcraft.common.items.ItemPlate.EnumPlate;
+import mods.railcraft.common.items.RailcraftItem;
 import mods.railcraft.common.items.RailcraftToolItems;
 import mods.railcraft.common.plugins.forge.CraftingPlugin;
 import mods.railcraft.common.util.crafting.CartFilterRecipe;
 import mods.railcraft.common.util.inventory.InvTools;
 import mods.railcraft.common.util.misc.EnumColor;
+import mods.railcraft.common.util.misc.Game;
 
 /**
  * @author CovertJaguar <http://www.railcraft.info>
@@ -59,8 +63,10 @@ public class ModuleTransport extends RailcraftModule {
                 'W',
                 "plankWood");
 
-        // initIronTank();
-        // initSteelTank();
+        if (!Game.isGTNH) {
+            initIronTank();
+            initSteelTank();
+        }
 
         EnumMachineBeta voidChest = EnumMachineBeta.VOID_CHEST;
         if (voidChest.register()) CraftingPlugin.addShapedRecipe(
@@ -243,20 +249,73 @@ public class ModuleTransport extends RailcraftModule {
         return false;
     }
 
-    /*
-     * private boolean defineIronTank(EnumMachineBeta type, Object... recipe) { if (defineTank(type, recipe)) {
-     * RailcraftCraftingManager.blastFurnace.addRecipe(type.getItem(), true, false, 640,
-     * RailcraftItem.nugget.getStack(4, ItemNugget.EnumNugget.STEEL)); return true; } return false; } private void
-     * initIronTank() { defineIronTank(EnumMachineBeta.TANK_IRON_WALL, "PP", "PP", 'P',
-     * RailcraftItem.plate.getRecipeObject(EnumPlate.IRON)); defineIronTank(EnumMachineBeta.TANK_IRON_GAUGE, "GPG",
-     * "PGP", "GPG", 'P', RailcraftItem.plate.getRecipeObject(EnumPlate.IRON), 'G', "paneGlassColorless");
-     * defineIronTank(EnumMachineBeta.TANK_IRON_VALVE, "GPG", "PLP", "GPG", 'P',
-     * RailcraftItem.plate.getRecipeObject(EnumPlate.IRON), 'L', new ItemStack(Blocks.lever), 'G', new
-     * ItemStack(Blocks.iron_bars)); } private void initSteelTank() { defineTank(EnumMachineBeta.TANK_STEEL_WALL, "PP",
-     * "PP", 'P', RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL)); defineTank(EnumMachineBeta.TANK_STEEL_GAUGE,
-     * "GPG", "PGP", "GPG", 'P', RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL), 'G', "paneGlassColorless");
-     * defineTank(EnumMachineBeta.TANK_STEEL_VALVE, "GPG", "PLP", "GPG", 'P',
-     * RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL), 'L', new ItemStack(Blocks.lever), 'G', new
-     * ItemStack(Blocks.iron_bars)); }
-     */
+    private boolean defineIronTank(EnumMachineBeta type, Object... recipe) {
+        if (defineTank(type, recipe)) {
+            LegacyBlastFurnaceRecipes.registerTankRecipe(type.getItem());
+            return true;
+        }
+        return false;
+    }
+
+    private void initIronTank() {
+        defineIronTank(
+                EnumMachineBeta.TANK_IRON_WALL,
+                "PP",
+                "PP",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.IRON));
+
+        defineIronTank(
+                EnumMachineBeta.TANK_IRON_GAUGE,
+                "GPG",
+                "PGP",
+                "GPG",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.IRON),
+                'G',
+                "paneGlassColorless");
+
+        defineIronTank(
+                EnumMachineBeta.TANK_IRON_VALVE,
+                "GPG",
+                "PLP",
+                "GPG",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.IRON),
+                'L',
+                new ItemStack(Blocks.lever),
+                'G',
+                new ItemStack(Blocks.iron_bars));
+    }
+
+    private void initSteelTank() {
+        defineTank(
+                EnumMachineBeta.TANK_STEEL_WALL,
+                "PP",
+                "PP",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL));
+
+        defineTank(
+                EnumMachineBeta.TANK_STEEL_GAUGE,
+                "GPG",
+                "PGP",
+                "GPG",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL),
+                'G',
+                "paneGlassColorless");
+
+        defineTank(
+                EnumMachineBeta.TANK_STEEL_VALVE,
+                "GPG",
+                "PLP",
+                "GPG",
+                'P',
+                RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL),
+                'L',
+                new ItemStack(Blocks.lever),
+                'G',
+                new ItemStack(Blocks.iron_bars));
+    }
 }

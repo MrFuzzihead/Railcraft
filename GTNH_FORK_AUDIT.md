@@ -449,10 +449,15 @@ that keeps every upstream lang change a clean fast-forward.
       `TileMachineBase` use it + `TileBlastFurnace` classic GUI title; `.classic` name/gui keys added to all locales
       (GTNH keys left untouched for clean upstream merges).
 
+### Pass 2 — Iron/Steel tanks (DONE, commit-ready)
+
+- [x] `ModuleTransport.initFirst` — `initIronTank()` / `initSteelTank()` restored and gated to `!Game.isGTNH`.
+- [x] `ModuleTransport` — `defineIronTank` / `initIronTank` / `initSteelTank` un-commented (reusing the existing
+      `defineTank` / `addColorRecipes` / `getColorTank` helpers).
+- [x] `LegacyBlastFurnaceRecipes.registerTankRecipe` — iron tank → 4 steel nuggets added to the BF helper.
+
 ### Remaining passes
 
-- [ ] **Pass 2 — Iron/Steel tanks** (`2.5`): restore `initIronTank`/`initSteelTank` + steel-nugget recycling in
-      `defineIronTank` for `!Game.isGTNH`.
 - [ ] **Pass 3 — must-fix breaks**: `TileRockCrusher.actionActivated` inverted gate (`2.13`); `CartFilterRecipe`
       container-item rejection gated/narrowed (`2.10`).
 - [ ] **Pass 4 — GTNH balance gates**: `SteamBoiler.getHeatLevel` (`2.7`); 8 rails → standard rail (`2.6`); creosote

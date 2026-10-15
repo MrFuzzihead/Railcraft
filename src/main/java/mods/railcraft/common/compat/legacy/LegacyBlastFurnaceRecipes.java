@@ -14,6 +14,7 @@ import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
 import mods.railcraft.common.blocks.machine.alpha.EnumMachineAlpha;
 import mods.railcraft.common.items.ItemCrowbar;
 import mods.railcraft.common.items.ItemIngot;
+import mods.railcraft.common.items.ItemNugget;
 import mods.railcraft.common.items.ItemPlate.EnumPlate;
 import mods.railcraft.common.items.RailcraftItem;
 import mods.railcraft.common.items.RailcraftToolItems;
@@ -115,6 +116,13 @@ public final class LegacyBlastFurnaceRecipes {
         if (Game.isGTNH) return;
         RailcraftCraftingManager.blastFurnace
                 .addRecipe(tank, true, false, 2560, RailcraftItem.ingot.getStack(2, ItemIngot.EnumIngot.STEEL));
+    }
+
+    /** Iron tank -&gt; 4 steel nuggets. */
+    public static void registerTankRecipe(ItemStack tank) {
+        if (Game.isGTNH) return;
+        RailcraftCraftingManager.blastFurnace
+                .addRecipe(tank, true, false, 640, RailcraftItem.nugget.getStack(4, ItemNugget.EnumNugget.STEEL));
     }
 
     private static void addSteel(ItemStack input, boolean matchDamage, boolean matchNbt, int cookTime, int amount) {

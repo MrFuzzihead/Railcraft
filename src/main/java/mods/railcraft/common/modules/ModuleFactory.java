@@ -24,6 +24,7 @@ import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
 import mods.railcraft.common.blocks.anvil.BlockRCAnvil;
 import mods.railcraft.common.blocks.machine.alpha.EnumMachineAlpha;
 import mods.railcraft.common.blocks.machine.beta.EnumMachineBeta;
+import mods.railcraft.common.compat.legacy.LegacyBlastFurnaceRecipes;
 import mods.railcraft.common.core.RailcraftConfig;
 import mods.railcraft.common.fluids.FluidHelper;
 import mods.railcraft.common.fluids.Fluids;
@@ -96,10 +97,15 @@ public class ModuleFactory extends RailcraftModule {
                 'S',
                 RailcraftItem.plate.getRecipeObject(EnumPlate.STEEL));
 
-        RailcraftCraftingManager.blastFurnace
-                .addRecipe(new ItemStack(Items.coal, 1, 0), true, false, 20, RailcraftToolItems.getCoalCoke());
-        RailcraftCraftingManager.blastFurnace
-                .addRecipe(new ItemStack(Blocks.coal_block), false, false, 180, EnumCube.COKE_BLOCK.getItem());
+        if (Game.isGTNH) {
+            // GTNH repurposes the Blast Furnace as the "Advanced Coke Oven".
+            RailcraftCraftingManager.blastFurnace
+                    .addRecipe(new ItemStack(Items.coal, 1, 0), true, false, 20, RailcraftToolItems.getCoalCoke());
+            RailcraftCraftingManager.blastFurnace
+                    .addRecipe(new ItemStack(Blocks.coal_block), false, false, 180, EnumCube.COKE_BLOCK.getItem());
+        } else {
+            LegacyBlastFurnaceRecipes.register();
+        }
 
         /*
          * alpha = EnumMachineAlpha.BLAST_FURNACE; if (alpha.register()) { ItemStack stack = alpha.getItem(4);
@@ -374,10 +380,8 @@ public class ModuleFactory extends RailcraftModule {
 
                 LootPlugin.addLootTool(type.getItem(), 1, 1, "steel.block");
 
-                /*
-                 * if (EnumMachineAlpha.BLAST_FURNACE.isAvaliable()) RailcraftCraftingManager.blastFurnace.addRecipe(new
-                 * ItemStack(Blocks.iron_block), false, false, 11520, EnumCube.STEEL_BLOCK.getItem());
-                 */ }
+                LegacyBlastFurnaceRecipes.registerSteelBlockRecipe();
+            }
 
             type = EnumCube.COPPER_BLOCK;
             if (RailcraftConfig.isSubBlockEnabled(type.getTag())) initMetalBlock(Metal.COPPER);
@@ -434,7 +438,7 @@ public class ModuleFactory extends RailcraftModule {
     @Override
     public void initSecond() {
         if (ModuleManager.isModuleLoaded(ModuleManager.Module.STRUCTURES)) {
-            if (EnumMachineAlpha.BLAST_FURNACE.isAvaliable() && EnumBrick.INFERNAL.getBlock() != null) {
+            if (Game.isGTNH && EnumMachineAlpha.BLAST_FURNACE.isAvaliable() && EnumBrick.INFERNAL.getBlock() != null) {
 
                 ItemStack stack = EnumMachineAlpha.BLAST_FURNACE.getItem(4);
                 CraftingPlugin.addShapedRecipe(
@@ -525,7 +529,8 @@ public class ModuleFactory extends RailcraftModule {
                     new ItemStack(Items.coal, 1, 1),
                     Fluids.CREOSOTE.get(250),
                     COKE_COOK_TIME);
-            RailcraftCraftingManager.blastFurnace.addRecipe(log, false, false, 20, new ItemStack(Items.coal, 1, 1));
+            if (Game.isGTNH)
+                RailcraftCraftingManager.blastFurnace.addRecipe(log, false, false, 20, new ItemStack(Items.coal, 1, 1));
         }
 
         if (IC2Plugin.isModInstalled()) {

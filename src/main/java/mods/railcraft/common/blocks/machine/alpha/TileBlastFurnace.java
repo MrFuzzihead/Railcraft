@@ -94,7 +94,7 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
     private int finishedAt;
 
     public TileBlastFurnace() {
-        super("railcraft.gui.blast.furnace", 3, patterns);
+        super(Game.isGTNH ? "railcraft.gui.blast.furnace" : "railcraft.gui.blast.furnace.classic", 3, patterns);
     }
 
     public static void placeBlastFurnace(World world, int x, int y, int z, ItemStack input, ItemStack output,

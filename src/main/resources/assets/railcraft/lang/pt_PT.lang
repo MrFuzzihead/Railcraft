@@ -66,6 +66,7 @@ railcraft.gates.trigger.fuel=Combustível em Baixo
 railcraft.gates.trigger.work=Tem Trabalho
 
 railcraft.gui.blast.furnace=§7 Alto-Forno
+railcraft.gui.blast.furnace.classic=§7 Alto-Forno
 railcraft.gui.steam.boiler=§7 Caldeira
 railcraft.gui.bore.ballast=Balastro
 railcraft.gui.bore.fuel=Combustível
@@ -119,6 +120,7 @@ item.railcraft.fluid.creosote.wax.name=Cápsula de Creosoto
 fluid.steam=Vapor
 
 tile.railcraft.machine.alpha.blast.furnace.name=Tijolo de Alto-Forno
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Tijolo de Alto-Forno
 tile.railcraft.machine.alpha.coke.oven.name=Tijolo de Forno de Coque
 tile.railcraft.machine.alpha.feed.station.name=Estação de Alimentação
 tile.railcraft.machine.alpha.rock.crusher.name=Esmagador de Pedras

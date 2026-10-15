@@ -350,6 +350,7 @@ railcraft.gui.aura.disable=@s监视效果关闭
 railcraft.gui.aura.enable=@s监视效果开启
 
 railcraft.gui.blast.furnace=高级焦炉
+railcraft.gui.blast.furnace.classic=§7 高炉
 
 railcraft.gui.bore.ballast=铺路材料
 railcraft.gui.bore.fuel=燃料
@@ -737,6 +738,7 @@ tile.railcraft.machine.alpha.anchor.passive.name=被动锚
 tile.railcraft.machine.alpha.anchor.personal.name=个人锚
 tile.railcraft.machine.alpha.anchor.world.name=世界锚
 tile.railcraft.machine.alpha.blast.furnace.name=高级焦炉砖块
+tile.railcraft.machine.alpha.blast.furnace.classic.name=高炉砖块
 tile.railcraft.machine.alpha.blast.furnace.tip=多方块结构:3x4x3(中空)
 tile.railcraft.machine.alpha.coke.oven.name=焦炉砖块
 tile.railcraft.machine.alpha.coke.oven.tip=多方块结构:3x3x3(中空)

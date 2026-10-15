@@ -37,7 +37,7 @@ public abstract class TileMachineBase extends RailcraftTileEntity {
 
     @Override
     public String getLocalizationTag() {
-        return getMachineType().getTag() + ".name";
+        return getMachineType().getLocalizationTag() + ".name";
     }
 
     @Override

@@ -282,6 +282,7 @@ railcraft.gui.aura.disable=@s Aura kikapcsolva
 railcraft.gui.aura.enable=@s Aura bekapcsolva
 
 railcraft.gui.blast.furnace=§7 Nagy olvasztókemence
+railcraft.gui.blast.furnace.classic=§7 Nagy olvasztókemence
 
 railcraft.gui.bore.ballast=Ballaszt
 railcraft.gui.bore.fuel=Üzemanyag
@@ -644,6 +645,7 @@ tile.railcraft.machine.alpha.anchor.admin.name=Admin Anchor
 tile.railcraft.machine.alpha.anchor.personal.name=Personal Anchor
 tile.railcraft.machine.alpha.anchor.world.name=World Anchor
 tile.railcraft.machine.alpha.blast.furnace.name=Blast Furnace Brick
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Blast Furnace Brick
 tile.railcraft.machine.alpha.blast.furnace.tip=Multi-Block: 3x4x3 (Hollow)
 tile.railcraft.machine.alpha.coke.oven.name=Coke Oven Brick
 tile.railcraft.machine.alpha.coke.oven.tip=Multi-Block: 3x3x3 (Hollow)

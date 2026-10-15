@@ -31,7 +31,7 @@ public class ItemMachine extends ItemBlockRailcraftMultiType {
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return machineBlock.getMachineProxy().getMachine(stack.getItemDamage()).getTag();
+        return machineBlock.getMachineProxy().getMachine(stack.getItemDamage()).getLocalizationTag();
     }
 
     @Override

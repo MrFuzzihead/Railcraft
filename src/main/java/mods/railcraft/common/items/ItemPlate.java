@@ -16,6 +16,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import mods.railcraft.common.compat.legacy.LegacyBlastFurnaceRecipes;
 import mods.railcraft.common.plugins.forge.RailcraftRegistry;
 import mods.railcraft.common.util.crafting.RollingMachineCraftingManager;
 
@@ -105,8 +106,7 @@ public class ItemPlate extends ItemRailcraft {
         recipe = new ShapedOreRecipe(plate.getStack(4, EnumPlate.LEAD), "II", "II", 'I', "ingotLead");
         RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
 
-        // RailcraftCraftingManager.blastFurnace.addRecipe(plate.getStack(EnumPlate.IRON), true, false, 1280,
-        // RailcraftItem.ingot.getStack(ItemIngot.EnumIngot.STEEL));
+        LegacyBlastFurnaceRecipes.registerPlateRecipe();
     }
 
     @Override

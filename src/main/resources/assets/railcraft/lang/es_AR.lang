@@ -585,6 +585,7 @@ tile.railcraft.machine.alpha.blast.furnace.classic.name=Ladrillos de Alto Horno
 tile.railcraft.machine.alpha.blast.furnace.tip=Multi-Bloque: 3x4x3 (Hueco)
 tile.railcraft.machine.alpha.coke.oven.name=Ladrillos para Horno de Coque
 tile.railcraft.machine.alpha.coke.oven.tip=Multi-Bloque: 3x3x3 (Hueco)
+tile.railcraft.machine.alpha.coke.oven.classic.tip=Multi-Bloque: 3x3x3 (Hueco)
 tile.railcraft.machine.epsilon.engraving.bench.name=Banco de Grabado
 tile.railcraft.machine.alpha.feed.station.name=Estación de Alimentación
 tile.railcraft.machine.alpha.rock.crusher.name=Trituradora de Rocas

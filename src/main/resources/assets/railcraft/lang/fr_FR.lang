@@ -397,6 +397,7 @@ tile.railcraft.machine.beta.boiler.tank.pressure.high.tip=Multi-Bloc: Taille var
 tile.railcraft.machine.beta.boiler.tank.pressure.low.tip=Multi-Bloc: Taille variable 10L
 tile.railcraft.machine.beta.chest.void.tip=Supprime les items
 tile.railcraft.machine.alpha.coke.oven.tip=Multi-Bloc: 3x3x3 (creux)
+tile.railcraft.machine.alpha.coke.oven.classic.tip=Multi-Bloc: 3x3x3 (creux)
 item.railcraft.tool.crowbar.tip=§oClic droit en s'accoupissant pour lier les wagonnets
 tile.railcraft.machine.beta.engine.steam.high.tip=Produit 80 RF/t\n Utilise 800L de vapeur par seconde
 tile.railcraft.machine.beta.engine.steam.hobby.tip=Produit 20 RF/t\n Utilise 200L de vapeur par seconde

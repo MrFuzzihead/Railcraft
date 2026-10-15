@@ -14,6 +14,7 @@ import mods.railcraft.common.fluids.Fluids;
 import mods.railcraft.common.fluids.tanks.StandardTank;
 import mods.railcraft.common.gui.widgets.IIndicatorController;
 import mods.railcraft.common.gui.widgets.IndicatorController;
+import mods.railcraft.common.util.misc.Game;
 
 /**
  *
@@ -88,7 +89,7 @@ public class SteamBoiler {
     }
 
     public double getHeatLevel() {
-        return heat / Steam.MAX_HEAT_LOW;
+        return Game.isGTNH ? heat / Steam.MAX_HEAT_LOW : heat / getMaxHeat();
     }
 
     public void increaseHeat(int numTanks) {

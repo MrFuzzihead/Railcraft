@@ -472,11 +472,20 @@ that keeps every upstream lang change a clean fast-forward.
 - [x] Coke Oven tooltip — `EnumMachineAlpha.getTooltipTag()` prefers `<coke.oven>.classic.tip` outside GTNH and falls
       back to the normal tip; `.classic.tip` keys added to every locale that has the tip.
 
-### Remaining passes
+### Pass 5 — GTNH content / QoL (DONE, commit-ready)
 
-- [ ] **Pass 5 — GTNH content/QoL**: gate `ModuleAdvancedTanks` on GT (`2.12`); silk-touch drop fix (`2.11`); optional
-      Blast Furnace auto-fuel restore (`2.4`).
-- [ ] Optional config override for GTNH mode.
+- [x] `ModuleAdvancedTanks.initFirst` — early-returns for `!Game.isGTNH`, so the GT-material tanks are no longer
+      registered as uncraftable ghost blocks outside GTNH.
+- [x] `BlockMachine.removedByPlayer` — upstream silk-touch branch restored for `!Game.isGTNH`, so coloured Iron/Steel
+      tanks keep their colour under Silk Touch. Anchors need no special override: `TileMachineBase.getBlockDroppedSilkTouch()`
+      already delegates to `getDrops()`, which carries the stored fuel.
+- [x] `TileBlastFurnace` — auto fuel input restored for `!Game.isGTNH` with both reported bugs fixed: it now moves up
+      to a full stack per tick (was one item) and accepts any adjacent inventory (was 27+ slots). GTNH keeps the cache
+      removed for performance.
+
+### Remaining
+
+- [ ] Optional config override for GTNH mode (`auto` / `forceLegacy` / `forceGTNH`) for testing and edge packs.
 
 ---
 

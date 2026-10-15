@@ -12,6 +12,7 @@ import mods.railcraft.common.fluids.FluidHelper;
 import mods.railcraft.common.plugins.forge.CraftingPlugin;
 import mods.railcraft.common.util.inventory.InvTools;
 import mods.railcraft.common.util.misc.EnumColor;
+import mods.railcraft.common.util.misc.Game;
 
 public class ModuleAdvancedTanks extends RailcraftModule {
 
@@ -89,6 +90,8 @@ public class ModuleAdvancedTanks extends RailcraftModule {
 
     @Override
     public void initFirst() {
+        if (!Game.isGTNH) return;
+
         initTanks();
         initTankOfType(ALUMINIUM);
         initTankOfType(STAINLESS);

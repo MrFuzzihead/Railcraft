@@ -14,6 +14,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
@@ -170,7 +171,14 @@ public class BlockMachine extends BlockContainer implements IPostConnection {
         player.addStat(StatList.mineBlockStatArray[getIdFromBlock(this)], 1);
         player.addExhaustion(0.025F);
         if (willHarvest && !player.capabilities.isCreativeMode) {
-            dropBlockAsItem(world, x, y, z, 0, 0);
+            if (!Game.isGTNH && canSilkHarvest(world, player, x, y, z, 0)
+                    && EnchantmentHelper.getSilkTouchModifier(player)) {
+                for (ItemStack stack : getBlockDroppedSilkTouch(world, x, y, z, 0, 0)) {
+                    dropBlockAsItem(world, x, y, z, stack);
+                }
+            } else {
+                dropBlockAsItem(world, x, y, z, 0, 0);
+            }
         }
         super.removedByPlayer(world, player, x, y, z, willHarvest);
         // prevent blockHarvest call

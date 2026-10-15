@@ -36,9 +36,13 @@ import mods.railcraft.common.blocks.machine.TileMultiBlockOven;
 import mods.railcraft.common.gui.EnumGui;
 import mods.railcraft.common.gui.GuiHandler;
 import mods.railcraft.common.plugins.forge.FuelPlugin;
+import mods.railcraft.common.util.inventory.AdjacentInventoryCache;
 import mods.railcraft.common.util.inventory.InvTools;
+import mods.railcraft.common.util.inventory.InventorySorter;
+import mods.railcraft.common.util.inventory.manipulators.InventoryManipulator;
 import mods.railcraft.common.util.inventory.wrappers.InventoryMapper;
 import mods.railcraft.common.util.misc.Game;
+import mods.railcraft.common.util.misc.ITileFilter;
 
 public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInventory {
 
@@ -62,8 +66,10 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
     private static final int FUEL_PER_TICK = 5;
     private static final int[] SLOTS = InvTools.buildSlotArray(0, 3);
     private static final List<MultiBlockPattern> patterns = new ArrayList<MultiBlockPattern>();
+    private final IInventory invFuel = new InventoryMapper(this, SLOT_FUEL, 1);
     private final IInventory invInput = new InventoryMapper(this, SLOT_INPUT, 1);
     private final IInventory invOutput = new InventoryMapper(this, SLOT_OUTPUT, 1);
+    private final AdjacentInventoryCache invCache;
 
     static {
         char[][][] map = {
@@ -95,6 +101,20 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
 
     public TileBlastFurnace() {
         super(Game.isGTNH ? "railcraft.gui.blast.furnace" : "railcraft.gui.blast.furnace.classic", 3, patterns);
+
+        if (Game.isGTNH) {
+            invCache = null;
+        } else {
+            invCache = new AdjacentInventoryCache(this, tileCache, new ITileFilter() {
+
+                @Override
+                public boolean matches(TileEntity tile) {
+                    // Upstream only accepted inventories of 27+ slots; accept any inventory instead.
+                    if (tile instanceof TileBlastFurnace) return false;
+                    return tile instanceof IInventory;
+                }
+            }, InventorySorter.SIZE_DECENDING);
+        }
     }
 
     public static void placeBlastFurnace(World world, int x, int y, int z, ItemStack input, ItemStack output,
@@ -199,6 +219,11 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
 
         if (Game.isNotHost(getWorld())) return;
 
+        if (!Game.isGTNH) {
+            TileBlastFurnace mBlock = (TileBlastFurnace) getMasterBlock();
+            if (mBlock != null) autoInputFuel(mBlock);
+        }
+
         if (isMaster()) {
             boolean wasBurning = isBurning();
             if (clock > finishedAt + 10) if (cookTime <= 0) setCooking(false);
@@ -252,6 +277,25 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
             }
 
             if (wasBurning != isBurning()) sendUpdateToClient();
+        }
+    }
+
+    private void autoInputFuel(TileBlastFurnace master) {
+        // Move up to a full stack per tick (upstream moved a single item) and accept any adjacent inventory.
+        ItemStack fuelSlot = master.invFuel.getStackInSlot(0);
+        if (fuelSlot != null && fuelSlot.stackSize >= fuelSlot.getMaxStackSize()) return;
+
+        for (IInventory source : invCache.getAdjacentInventories()) {
+            InventoryManipulator imSource = InventoryManipulator.get(source);
+            List<ItemStack> pulled = imSource.removeItems(FUEL_FILTER, 64);
+            if (pulled.isEmpty()) continue;
+
+            InventoryManipulator imDest = InventoryManipulator.get(master.invFuel);
+            for (ItemStack stack : pulled) {
+                ItemStack remainder = imDest.addStack(stack);
+                if (remainder != null) imSource.addStack(remainder);
+            }
+            return;
         }
     }
 

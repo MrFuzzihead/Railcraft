@@ -303,6 +303,7 @@ railcraft.gui.aura.disable=@s Aura Off
 railcraft.gui.aura.enable=@s Aura On
 
 railcraft.gui.blast.furnace=§7 Vysoká pec
+railcraft.gui.blast.furnace.classic=§7 Vysoká pec
 
 railcraft.gui.bore.ballast=Balast
 railcraft.gui.bore.fuel=Palivo
@@ -685,6 +686,7 @@ tile.railcraft.machine.alpha.anchor.passive.name=Pasivní kotva
 tile.railcraft.machine.alpha.anchor.personal.name=Osobní kotva
 tile.railcraft.machine.alpha.anchor.world.name=Světová kotva
 tile.railcraft.machine.alpha.blast.furnace.name=Cihlová vysoká pec
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Cihlová vysoká pec
 tile.railcraft.machine.alpha.blast.furnace.tip=Multi-blok: 3x4x3 (dutý)
 tile.railcraft.machine.alpha.coke.oven.name=Cihlová koksovací pec
 tile.railcraft.machine.alpha.coke.oven.tip=-Coke Oven-\n Multi-blok: 3x3x3 (dutý)\n vyrábí koks a kreosot

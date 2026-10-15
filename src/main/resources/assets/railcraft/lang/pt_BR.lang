@@ -66,6 +66,7 @@ railcraft.gates.trigger.fuel=Combustivel baixo
 railcraft.gates.trigger.work=Tem Trabalho
 
 railcraft.gui.blast.furnace=§7 Forno Infernal
+railcraft.gui.blast.furnace.classic=§7 Forno Infernal
 railcraft.gui.bore.ballast=Cascalho
 railcraft.gui.bore.fuel=Combustivel
 railcraft.gui.bore.head=Cabeça da Broca
@@ -115,6 +116,7 @@ item.railcraft.fluid.creosote.wax.name=Cápsula de Cera de Creosoto
 fluid.steam=Vapor
 
 tile.railcraft.machine.alpha.blast.furnace.name=Tijolo de Forno Infernal
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Tijolo de Forno Infernal
 tile.railcraft.machine.alpha.coke.oven.name=Tijolo de Forno de Coca
 tile.railcraft.machine.alpha.feed.station.name=Estação de Alimentação
 tile.railcraft.machine.alpha.rock.crusher.name=Esmagador de Pedras

@@ -68,6 +68,7 @@ railcraft.gates.trigger.fuel=燃料僅少
 railcraft.gates.trigger.work=稼働中
 
 railcraft.gui.blast.furnace=§7 高炉
+railcraft.gui.blast.furnace.classic=§7 高炉
 railcraft.gui.steam.boiler=§7 ボイラー
 railcraft.gui.bore.ballast=バラスト
 railcraft.gui.bore.fuel=燃料
@@ -121,6 +122,7 @@ item.railcraft.fluid.creosote.wax.name=クレオソート入りカプセル
 fluid.steam=蒸気
 
 tile.railcraft.machine.alpha.blast.furnace.name=高炉用レンガ
+tile.railcraft.machine.alpha.blast.furnace.classic.name=高炉用レンガ
 tile.railcraft.machine.alpha.coke.oven.name=コークス炉用レンガ
 tile.railcraft.machine.alpha.feed.station.name=フィードステーション
 tile.railcraft.machine.alpha.rock.crusher.name=破砕機

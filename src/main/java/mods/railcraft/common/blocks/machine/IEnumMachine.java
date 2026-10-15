@@ -21,6 +21,15 @@ public interface IEnumMachine {
 
     String getTag();
 
+    /**
+     * Translation key used for the machine's display name. Kept separate from {@link #getTag()} so the GTNH fork can
+     * re-purpose machines (for example Blast Furnace -&gt; "Advanced Coke Oven") without losing the classic name for
+     * non-GTNH packs.
+     */
+    default String getLocalizationTag() {
+        return getTag();
+    }
+
     boolean isAvaliable();
 
     ItemStack getItem();

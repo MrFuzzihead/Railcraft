@@ -123,6 +123,7 @@ railcraft.gui.anchor.fuel.remaining=@.2f uren
 railcraft.gui.aura.enable=@s Aura Aan
 railcraft.gui.aura.disable=@s Aura Uit
 railcraft.gui.blast.furnace=§7 Hoogoven
+railcraft.gui.blast.furnace.classic=§7 Hoogoven
 railcraft.gui.steam.boiler=§7 Stoomketel
 railcraft.gui.bore.ballast=Ballast
 railcraft.gui.bore.fuel=Brandstof
@@ -203,6 +204,7 @@ item.railcraft.fluid.creosote.wax.name=Creosootolie Capsule
 fluid.steam=Stoom
 
 tile.railcraft.machine.alpha.blast.furnace.name=Bakstenen Hoogoven
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Bakstenen Hoogoven
 tile.railcraft.machine.alpha.coke.oven.name=Bakstenen Cokesoven
 tile.railcraft.machine.alpha.feed.station.name=Voedingsstation
 tile.railcraft.machine.alpha.anchor.personal.name=Persoonlijk wereldanker

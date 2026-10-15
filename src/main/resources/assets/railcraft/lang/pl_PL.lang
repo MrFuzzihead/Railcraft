@@ -133,6 +133,7 @@ railcraft.gui.anchor.fuel.remaining=@.2f godzin
 railcraft.gui.aura.enable=@s Aura Włączona
 railcraft.gui.aura.disable=@s Aura Wyłączona
 railcraft.gui.blast.furnace=§7 Piec Hutniczy
+railcraft.gui.blast.furnace.classic=§7 Piec Hutniczy
 railcraft.gui.steam.boiler=§7 Bojler Parowy
 railcraft.gui.bore.ballast=Balast
 railcraft.gui.bore.fuel=Paliwo
@@ -214,6 +215,7 @@ item.railcraft.fluid.creosote.wax.name=Kapsuła z Kreozotem
 fluid.steam=Para Wodna
 
 tile.railcraft.machine.alpha.blast.furnace.name=Cegła Pieca Hutniczego
+tile.railcraft.machine.alpha.blast.furnace.classic.name=Cegła Pieca Hutniczego
 tile.railcraft.machine.alpha.coke.oven.name=Cegła Pieca Koksowniczego
 tile.railcraft.machine.alpha.feed.station.name=Karmnik
 tile.railcraft.machine.alpha.anchor.personal.name=Osobista Kotwica

@@ -23,6 +23,7 @@ import mods.railcraft.common.items.firestone.ItemFirestoneCracked;
 import mods.railcraft.common.items.firestone.ItemFirestoneRefined;
 import mods.railcraft.common.plugins.thaumcraft.ThaumcraftPlugin;
 import mods.railcraft.common.util.inventory.InvTools;
+import mods.railcraft.common.util.misc.Game;
 
 public class BlastFurnaceCraftingManager implements IBlastFurnaceCraftingManager {
 
@@ -47,9 +48,9 @@ public class BlastFurnaceCraftingManager implements IBlastFurnaceCraftingManager
             fuel.add(ThaumcraftPlugin.getItem("itemResource", 0));
             fuel.add(RailcraftToolItems.getCoalCoke());
             fuel.add(EnumCube.COKE_BLOCK.getItem());
-            fuel.add(new ItemStack(Items.coal, 1, 0));
+            if (Game.isGTNH) fuel.add(new ItemStack(Items.coal, 1, 0));
             fuel.add(new ItemStack(Items.coal, 1, 1));
-            fuel.add(new ItemStack(Blocks.coal_block, 1, 0));
+            if (Game.isGTNH) fuel.add(new ItemStack(Blocks.coal_block, 1, 0));
             fuel.add(InvTools.makeStack(ItemFirestoneRefined.item, 1, OreDictionary.WILDCARD_VALUE));
             fuel.add(InvTools.makeStack(ItemFirestoneCracked.item, 1, OreDictionary.WILDCARD_VALUE));
             fuels = Collections.unmodifiableList(fuel);

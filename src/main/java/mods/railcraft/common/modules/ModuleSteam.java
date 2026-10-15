@@ -14,6 +14,7 @@ import mods.railcraft.common.blocks.RailcraftBlocks;
 import mods.railcraft.common.blocks.machine.alpha.EnumMachineAlpha;
 import mods.railcraft.common.blocks.machine.beta.EnumMachineBeta;
 import mods.railcraft.common.blocks.machine.epsilon.EnumMachineEpsilon;
+import mods.railcraft.common.compat.legacy.LegacyBlastFurnaceRecipes;
 import mods.railcraft.common.core.RailcraftConfig;
 import mods.railcraft.common.items.ItemGear.EnumGear;
 import mods.railcraft.common.items.ItemIngot;
@@ -72,8 +73,7 @@ public class ModuleSteam extends RailcraftModule {
                         'G',
                         "gearIron");
 
-                // RailcraftCraftingManager.blastFurnace.addRecipe(stack, true, false, 15360,
-                // RailcraftItem.ingot.getStack(12, ItemIngot.EnumIngot.STEEL));
+                LegacyBlastFurnaceRecipes.registerSteamEngineRecipe(stack);
             }
         }
 
@@ -156,8 +156,7 @@ public class ModuleSteam extends RailcraftModule {
                         'P',
                         RailcraftItem.plate.getRecipeObject(EnumPlate.IRON));
 
-                // RailcraftCraftingManager.blastFurnace.addRecipe(stack, true, false, 2560,
-                // RailcraftItem.ingot.getStack(2, ItemIngot.EnumIngot.STEEL));
+                LegacyBlastFurnaceRecipes.registerBoilerTankRecipe(stack);
             }
         }
 

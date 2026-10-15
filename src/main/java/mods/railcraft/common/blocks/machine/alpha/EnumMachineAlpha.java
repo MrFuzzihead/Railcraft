@@ -27,6 +27,7 @@ import mods.railcraft.common.gui.tooltips.ToolTip;
 import mods.railcraft.common.modules.ModuleManager;
 import mods.railcraft.common.modules.ModuleManager.Module;
 import mods.railcraft.common.plugins.forge.LocalizationPlugin;
+import mods.railcraft.common.util.misc.Game;
 
 /**
  *
@@ -124,6 +125,12 @@ public enum EnumMachineAlpha implements IEnumMachine {
     @Override
     public String getTag() {
         return "tile.railcraft.machine.alpha." + tag;
+    }
+
+    @Override
+    public String getLocalizationTag() {
+        if (!Game.isGTNH && this == BLAST_FURNACE) return "tile.railcraft.machine.alpha.blast.furnace.classic";
+        return getTag();
     }
 
     @Override

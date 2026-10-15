@@ -456,10 +456,15 @@ that keeps every upstream lang change a clean fast-forward.
       `defineTank` / `addColorRecipes` / `getColorTank` helpers).
 - [x] `LegacyBlastFurnaceRecipes.registerTankRecipe` — iron tank → 4 steel nuggets added to the BF helper.
 
+### Pass 3 — must-fix breaks (DONE, commit-ready)
+
+- [x] `TileRockCrusher.actionActivated` — inverted `Game.isGTNH` flipped to `!Game.isGTNH`, so the BuildCraft pause
+      gate works for non-GTNH and GTNH no longer accumulates dead actions.
+- [x] `CartFilterRecipe` — the `hasContainerItem` rejection is now gated to `Game.isGTNH`; non-GTNH buckets/containers
+      can filter Tank and Cargo carts again, while GTNH keeps its dupe guard.
+
 ### Remaining passes
 
-- [ ] **Pass 3 — must-fix breaks**: `TileRockCrusher.actionActivated` inverted gate (`2.13`); `CartFilterRecipe`
-      container-item rejection gated/narrowed (`2.10`).
 - [ ] **Pass 4 — GTNH balance gates**: `SteamBoiler.getHeatLevel` (`2.7`); 8 rails → standard rail (`2.6`); creosote
       value (`2.8`); Coke Oven deprecation tooltip (`2.9`, `.classic` tip key).
 - [ ] **Pass 5 — GTNH content/QoL**: gate `ModuleAdvancedTanks` on GT (`2.12`); silk-touch drop fix (`2.11`); optional

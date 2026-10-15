@@ -340,7 +340,7 @@ public class TileRockCrusher extends TileMultiBlockInventory implements IEnergyH
 
     @Override
     public void actionActivated(IActionExternal action) {
-        if (Game.isGTNH) {
+        if (!Game.isGTNH) {
             TileRockCrusher mBlock = (TileRockCrusher) getMasterBlock();
             if (mBlock != null) mBlock.actions.add(action);
         }

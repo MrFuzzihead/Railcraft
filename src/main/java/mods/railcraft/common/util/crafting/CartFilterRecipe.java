@@ -18,6 +18,7 @@ import mods.railcraft.common.carts.ICartType;
 import mods.railcraft.common.fluids.FluidItemHelper;
 import mods.railcraft.common.util.inventory.wrappers.IInvSlot;
 import mods.railcraft.common.util.inventory.wrappers.InventoryIterator;
+import mods.railcraft.common.util.misc.Game;
 
 /**
  * @author CovertJaguar <http://www.railcraft.info>
@@ -97,7 +98,10 @@ public class CartFilterRecipe implements IRecipe {
             return null;
         }
 
-        if (filterItem.getItem().hasContainerItem(filterItem)) {
+        // GTNH blocks container-item filters to fix a GT/IC2 dupe (GTNewHorizons/Dupes-Exploits-GTNH#13).
+        // Outside GTNH this broke the normal use case (e.g. filled buckets as Tank Cart filters), so only apply it
+        // there.
+        if (Game.isGTNH && filterItem.getItem().hasContainerItem(filterItem)) {
             /*
              * System.out.println("Has container item.");
              * System.out.println("Does Container Item Leave Crafting Grid: "+filterItem.getItem().

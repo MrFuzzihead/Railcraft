@@ -282,7 +282,7 @@ railcraft.gui.aura.disable=@s Aura kikapcsolva
 railcraft.gui.aura.enable=@s Aura bekapcsolva
 
 railcraft.gui.blast.furnace=§7 Nagy olvasztókemence
-railcraft.gui.blast.furnace.classic=§7 Nagy olvasztókemence
+railcraft.gui.blast.furnace.gtnh=§7 Nagy olvasztókemence
 
 railcraft.gui.bore.ballast=Ballaszt
 railcraft.gui.bore.fuel=Üzemanyag

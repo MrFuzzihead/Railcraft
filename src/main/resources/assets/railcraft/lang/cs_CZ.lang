@@ -303,7 +303,7 @@ railcraft.gui.aura.disable=@s Aura Off
 railcraft.gui.aura.enable=@s Aura On
 
 railcraft.gui.blast.furnace=§7 Vysoká pec
-railcraft.gui.blast.furnace.classic=§7 Vysoká pec
+railcraft.gui.blast.furnace.gtnh=§7 Vysoká pec
 
 railcraft.gui.bore.ballast=Balast
 railcraft.gui.bore.fuel=Palivo

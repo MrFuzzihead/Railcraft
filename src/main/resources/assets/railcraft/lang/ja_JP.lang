@@ -68,7 +68,7 @@ railcraft.gates.trigger.fuel=燃料僅少
 railcraft.gates.trigger.work=稼働中
 
 railcraft.gui.blast.furnace=§7 高炉
-railcraft.gui.blast.furnace.classic=§7 高炉
+railcraft.gui.blast.furnace.gtnh=§7 高炉
 railcraft.gui.steam.boiler=§7 ボイラー
 railcraft.gui.bore.ballast=バラスト
 railcraft.gui.bore.fuel=燃料

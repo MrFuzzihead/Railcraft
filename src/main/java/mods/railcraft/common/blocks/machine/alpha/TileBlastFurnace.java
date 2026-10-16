@@ -100,7 +100,7 @@ public class TileBlastFurnace extends TileMultiBlockOven implements ISidedInvent
     private int finishedAt;
 
     public TileBlastFurnace() {
-        super(Game.isGTNH ? "railcraft.gui.blast.furnace" : "railcraft.gui.blast.furnace.classic", 3, patterns);
+        super(Game.isGTNH ? "railcraft.gui.blast.furnace.gtnh" : "railcraft.gui.blast.furnace", 3, patterns);
 
         if (Game.isGTNH) {
             invCache = null;

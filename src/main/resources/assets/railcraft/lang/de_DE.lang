@@ -345,8 +345,8 @@ railcraft.gui.aspect.yellow.name=Gelb
 railcraft.gui.aura.disable=Signal Aus: @s
 railcraft.gui.aura.enable=Signal An: @s
 
-railcraft.gui.blast.furnace=Kokerei II
-railcraft.gui.blast.furnace.classic=§7 Hochofen
+railcraft.gui.blast.furnace=§7 Hochofen
+railcraft.gui.blast.furnace.gtnh=Kokerei II
 
 railcraft.gui.bore.ballast=Ballast
 railcraft.gui.bore.fuel=Treibstoff

@@ -352,8 +352,8 @@ railcraft.gui.aspect.yellow.name=Yellow
 railcraft.gui.aura.disable=@s Aura Off
 railcraft.gui.aura.enable=@s Aura On
 
-railcraft.gui.blast.furnace=Advanced Coke Oven
-railcraft.gui.blast.furnace.classic=§7 Blast Furnace
+railcraft.gui.blast.furnace=§7 Blast Furnace
+railcraft.gui.blast.furnace.gtnh=Advanced Coke Oven
 
 railcraft.gui.bore.ballast=Ballast
 railcraft.gui.bore.fuel=Fuel

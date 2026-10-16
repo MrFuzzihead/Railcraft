@@ -232,7 +232,7 @@ railcraft.gui.aura.disable=@s Aura Apagada
 railcraft.gui.aura.enable=@s Aura Encendida
 
 railcraft.gui.blast.furnace=§7 Alto Horno
-railcraft.gui.blast.furnace.classic=§7 Alto Horno
+railcraft.gui.blast.furnace.gtnh=§7 Alto Horno
 
 railcraft.gui.bore.ballast=Lastre
 railcraft.gui.bore.fuel=Combustible

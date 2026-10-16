@@ -66,7 +66,7 @@ railcraft.gates.trigger.fuel=Combustível em Baixo
 railcraft.gates.trigger.work=Tem Trabalho
 
 railcraft.gui.blast.furnace=§7 Alto-Forno
-railcraft.gui.blast.furnace.classic=§7 Alto-Forno
+railcraft.gui.blast.furnace.gtnh=§7 Alto-Forno
 railcraft.gui.steam.boiler=§7 Caldeira
 railcraft.gui.bore.ballast=Balastro
 railcraft.gui.bore.fuel=Combustível

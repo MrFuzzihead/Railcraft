@@ -349,8 +349,8 @@ railcraft.gui.aspect.yellow.name=黄色
 railcraft.gui.aura.disable=@s监视效果关闭
 railcraft.gui.aura.enable=@s监视效果开启
 
-railcraft.gui.blast.furnace=高级焦炉
-railcraft.gui.blast.furnace.classic=§7 高炉
+railcraft.gui.blast.furnace=§7 高炉
+railcraft.gui.blast.furnace.gtnh=高级焦炉
 
 railcraft.gui.bore.ballast=铺路材料
 railcraft.gui.bore.fuel=燃料

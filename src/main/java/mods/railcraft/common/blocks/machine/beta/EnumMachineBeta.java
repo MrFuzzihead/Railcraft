@@ -25,6 +25,7 @@ import mods.railcraft.common.gui.tooltips.ToolTip;
 import mods.railcraft.common.modules.ModuleManager;
 import mods.railcraft.common.modules.ModuleManager.Module;
 import mods.railcraft.common.plugins.forge.LocalizationPlugin;
+import mods.railcraft.common.util.misc.Game;
 
 /**
  *
@@ -186,8 +187,16 @@ public enum EnumMachineBeta implements IEnumMachine {
 
     public ToolTip getToolTip(ItemStack stack, EntityPlayer player, boolean adv) {
         if (tip != null) return tip;
-        String tipTag = getTag() + ".tip";
+        String tipTag = getTooltipTag();
         if (LocalizationPlugin.hasTag(tipTag)) tip = ToolTip.buildToolTip(tipTag);
         return tip;
+    }
+
+    private String getTooltipTag() {
+        if (!Game.isGTNH) {
+            String classic = getTag() + ".classic.tip";
+            if (LocalizationPlugin.hasTag(classic)) return classic;
+        }
+        return getTag() + ".tip";
     }
 }

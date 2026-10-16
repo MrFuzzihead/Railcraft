@@ -207,8 +207,8 @@ public enum EnumMachineAlpha implements IEnumMachine {
     }
 
     private String getTooltipTag() {
-        if (!Game.isGTNH && this == COKE_OVEN) {
-            String classic = "tile.railcraft.machine.alpha.coke.oven.classic.tip";
+        if (!Game.isGTNH) {
+            String classic = getTag() + ".classic.tip";
             if (LocalizationPlugin.hasTag(classic)) return classic;
         }
         return getTag() + ".tip";

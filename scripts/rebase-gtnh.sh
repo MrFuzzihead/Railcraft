@@ -19,7 +19,11 @@ git switch "$FEATURE"
 git rebase "${UPSTREAM}/master"
 
 echo "==> Building"
-./gradlew build
+./gradlew clean build
+
+if [ -n "$(git status --porcelain)" ]; then
+    echo "WARNING: working tree is not clean; the jar will have a '-dirty' suffix."
+fi
 
 echo
 echo "==> Release jar(s) in build/libs:"

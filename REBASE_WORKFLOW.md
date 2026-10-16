@@ -62,9 +62,10 @@ git rebase upstream/master        # or: git rebase <release-tag>
 | `Railcraft-<version>-dev.jar` | Dev/deobfuscated — do not ship. |
 | `Railcraft-<version>-sources.jar` | Sources — do not ship. |
 | `Railcraft-<version>-api.jar` | API — do not ship. |
-| `Railcraft-<version>-dirty*.jar` | Built with uncommitted changes — ignore; rebuild on a clean tree. |
+| `Railcraft-<version>-dirty*.jar` | Built with uncommitted/untracked files — ignore; rebuild on a clean tree. |
 
-The version string is `<GTNH-version>-master.<n>+<sha>`; the `<n>`/`<sha>` are just this fork's commits.
+The version string is `<GTNH-version>-<branch>.<n>+<sha>` (e.g. `9.17.34-gtnh-compat.7+2c5f9e375b`); the
+`<n>`/`<sha>` are just this fork's commits.
 
 > Tip: build on a clean working tree (`git status`) so you get a non-`dirty` jar.
 

@@ -137,6 +137,8 @@ Legend: **[NEI]** needs NotEnoughItems, **[BC]** needs BuildCraft, **[IC2]**/**[
       tooltips show the **classic** text, not the raw key or the GTNH text.
 - [ ] Creative tab contents differ correctly between the two instances (no advanced tanks outside GTNH).
 - [ ] NEI/CraftGuide: recipes for BF, tanks and rails display correctly. [NEI]
+- [ ] **NEI Integration** (if installed): the Blast Furnace recipe tab is titled **"Blast Furnace"** in the legacy
+      instance and **"Advanced Coke Oven"** in the GTNH instance. [NEI]
 
 ---
 

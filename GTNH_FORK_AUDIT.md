@@ -471,6 +471,10 @@ that keeps every upstream lang change a clean fast-forward.
 - [x] `ModuleCore.addLiquidFuels` — creosote boiler fuel value `Game.isGTNH ? 6400 : 4800`.
 - [x] Coke Oven tooltip — `EnumMachineAlpha.getTooltipTag()` prefers `<coke.oven>.classic.tip` outside GTNH and falls
       back to the normal tip; `.classic.tip` keys added to every locale that has the tip.
+- [x] NEI Integration — its `RecipeHandlerBlastFurnace` reads the **base** key `railcraft.gui.blast.furnace`, so the
+      `.classic` indirection did not cover it. The base key now holds the classic name and GTNH's value lives in
+      `railcraft.gui.blast.furnace.gtnh`; `TileBlastFurnace` selects `.gtnh` in GTNH mode. Other NEI Integration
+      handlers (Coke Oven, Rock Crusher, Rolling Machine) use keys GTNH did not rename.
 
 ### Pass 5 — GTNH content / QoL (DONE, commit-ready)
 

@@ -352,8 +352,8 @@ railcraft.gui.aspect.yellow.name=Жёлтый
 railcraft.gui.aura.disable=Аура "@s" откл.
 railcraft.gui.aura.enable=Аура "@s" включена
 
-railcraft.gui.blast.furnace=Продвинутая коксовая печь
-railcraft.gui.blast.furnace.classic=§7 Доменная печь
+railcraft.gui.blast.furnace=§7 Доменная печь
+railcraft.gui.blast.furnace.gtnh=Продвинутая коксовая печь
 
 railcraft.gui.bore.ballast=Балласт
 railcraft.gui.bore.fuel=Топливо

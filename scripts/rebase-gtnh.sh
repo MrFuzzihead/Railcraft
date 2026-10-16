@@ -19,14 +19,15 @@ git switch "$FEATURE"
 git rebase "${UPSTREAM}/master"
 
 echo "==> Building"
-./gradlew clean build
+./gradlew build
 
 if [ -n "$(git status --porcelain)" ]; then
     echo "WARNING: working tree is not clean; the jar will have a '-dirty' suffix."
 fi
 
 echo
-echo "==> Release jar(s) in build/libs:"
-ls -1 build/libs/*.jar | grep -vE -- '(-dev|-sources|-api)\.jar$|dirty' || true
+NEWEST=$(ls -1t build/libs/*.jar 2>/dev/null | grep -vE -- '(-dev|-sources|-api)\.jar$' | head -1 || true)
+echo "==> Newest release jar: ${NEWEST:-<none>}"
+echo "    (full list: build/libs/)"
 echo
-echo "Copy the Railcraft-<version>.jar above into your modpack's mods/ folder."
+echo "Copy that jar into your modpack's mods/ folder."
